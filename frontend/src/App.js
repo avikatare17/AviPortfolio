@@ -1,166 +1,293 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import './App.css';
 
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8080';
-
 function App() {
-  const [items, setItems] = useState([]);
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
-  const [status, setStatus] = useState('');
+  const [activeSection, setActiveSection] = useState('home');
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
-    fetchItems();
-    checkHealth();
+    // Handle scroll to update active section
+    const handleScroll = () => {
+      const sections = ['home', 'education', 'projects', 'skills', 'contact'];
+      const scrollPosition = window.scrollY + 100;
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const offsetTop = element.offsetTop;
+          const offsetHeight = element.offsetHeight;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const checkHealth = async () => {
-    try {
-      const response = await axios.get(`${API_URL}/api/health`);
-      setStatus(response.data.status);
-    } catch (err) {
-      setError('Unable to connect to API');
-      setStatus('unhealthy');
-    }
-  };
-
-  const fetchItems = async () => {
-    try {
-      setLoading(true);
-      const response = await axios.get(`${API_URL}/api/items`);
-      setItems(response.data);
-      setError(null);
-    } catch (err) {
-      setError('Failed to fetch items');
-      console.error(err);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (!title.trim() || !description.trim()) {
-      setError('Please fill in all fields');
-      return;
-    }
-
-    try {
-      setLoading(true);
-      const response = await axios.post(`${API_URL}/api/items`, {
-        title: title.trim(),
-        description: description.trim(),
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const offset = 80; // Account for fixed navbar
+      const elementPosition = element.offsetTop - offset;
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth'
       });
-      setItems([...items, response.data]);
-      setTitle('');
-      setDescription('');
-      setError(null);
-    } catch (err) {
-      setError('Failed to create item');
-      console.error(err);
-    } finally {
-      setLoading(false);
+      setIsMenuOpen(false);
     }
   };
 
-  const handleDelete = async (id) => {
-    try {
-      setLoading(true);
-      await axios.delete(`${API_URL}/api/items/${id}`);
-      setItems(items.filter(item => item.id !== id));
-      setError(null);
-    } catch (err) {
-      setError('Failed to delete item');
-      console.error(err);
-    } finally {
-      setLoading(false);
-    }
-  };
+  const navItems = [
+    { id: 'home', label: 'Home' },
+    { id: 'education', label: 'Education' },
+    { id: 'projects', label: 'Projects' },
+    { id: 'skills', label: 'Skills' },
+    { id: 'contact', label: 'Contact' }
+  ];
 
   return (
     <div className="App">
-      <div className="container">
-        <header className="header">
-          <h1>Portfolio Application</h1>
-          <div className="status">
-            <span className={`status-badge ${status}`}>
-              API Status: {status || 'checking...'}
-            </span>
+      {/* Navigation */}
+      <nav className="navbar">
+        <div className="nav-container">
+          <div className="nav-logo">
+            <span>Avi</span>
           </div>
-        </header>
+          <button 
+            className="nav-toggle" 
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
+            {navItems.map(item => (
+              <li key={item.id}>
+                <a
+                  href={`#${item.id}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection(item.id);
+                  }}
+                  className={activeSection === item.id ? 'active' : ''}
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </nav>
 
-        {error && (
-          <div className="error-message">
-            {error}
-          </div>
-        )}
-
-        <div className="content">
-          <div className="form-section">
-            <h2>Add New Item</h2>
-            <form onSubmit={handleSubmit}>
-              <div className="form-group">
-                <label htmlFor="title">Title</label>
-                <input
-                  type="text"
-                  id="title"
-                  value={title}
-                  onChange={(e) => setTitle(e.target.value)}
-                  placeholder="Enter title"
-                  disabled={loading}
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="description">Description</label>
-                <textarea
-                  id="description"
-                  value={description}
-                  onChange={(e) => setDescription(e.target.value)}
-                  placeholder="Enter description"
-                  rows="4"
-                  disabled={loading}
-                />
-              </div>
-              <button type="submit" disabled={loading} className="submit-btn">
-                {loading ? 'Adding...' : 'Add Item'}
+      {/* Landing Page / Home Section */}
+      <section id="home" className="section home-section">
+        <div className="container">
+          <div className="hero-content">
+            <h1 className="hero-title">
+              Hi, I'm <span className="highlight">Avi</span>
+            </h1>
+            <p className="hero-subtitle">Software Developer & Engineer</p>
+            <p className="hero-description">
+              Welcome to my portfolio. Explore my work, skills, and experience.
+            </p>
+            <div className="hero-buttons">
+              <button 
+                className="btn btn-primary" 
+                onClick={() => scrollToSection('projects')}
+              >
+                View My Work
               </button>
-            </form>
-          </div>
-
-          <div className="items-section">
-            <h2>Items ({items.length})</h2>
-            {loading && items.length === 0 ? (
-              <div className="loading">Loading...</div>
-            ) : items.length === 0 ? (
-              <div className="empty-state">No items yet. Add one above!</div>
-            ) : (
-              <div className="items-list">
-                {items.map((item) => (
-                  <div key={item.id} className="item-card">
-                    <div className="item-content">
-                      <h3>{item.title}</h3>
-                      <p>{item.description}</p>
-                    </div>
-                    <button
-                      onClick={() => handleDelete(item.id)}
-                      disabled={loading}
-                      className="delete-btn"
-                    >
-                      Delete
-                    </button>
-                  </div>
-                ))}
-              </div>
-            )}
+              <button 
+                className="btn btn-secondary" 
+                onClick={() => scrollToSection('contact')}
+              >
+                Get In Touch
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* Education Section */}
+      <section id="education" className="section education-section">
+        <div className="container">
+          <h2 className="section-title">Education</h2>
+          <div className="education-grid">
+            <div className="education-card">
+              <div className="education-icon">🎓</div>
+              <h3>Degree Name</h3>
+              <p className="education-institution">Institution Name</p>
+              <p className="education-period">Year - Year</p>
+              <p className="education-description">
+                Description of your degree, major, and key achievements.
+              </p>
+            </div>
+            <div className="education-card">
+              <div className="education-icon">📚</div>
+              <h3>Additional Education</h3>
+              <p className="education-institution">Institution Name</p>
+              <p className="education-period">Year - Year</p>
+              <p className="education-description">
+                Certifications, courses, or additional training.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section id="projects" className="section projects-section">
+        <div className="container">
+          <h2 className="section-title">Projects</h2>
+          <div className="projects-grid">
+            <div className="project-card">
+              <div className="project-image">📱</div>
+              <h3>Project Name 1</h3>
+              <p className="project-description">
+                Brief description of the project, technologies used, and your role.
+              </p>
+              <div className="project-tech">
+                <span className="tech-tag">React</span>
+                <span className="tech-tag">Python</span>
+                <span className="tech-tag">API</span>
+              </div>
+              <div className="project-links">
+                <a href="#" className="project-link">View Project</a>
+                <a href="#" className="project-link">GitHub</a>
+              </div>
+            </div>
+            <div className="project-card">
+              <div className="project-image">💻</div>
+              <h3>Project Name 2</h3>
+              <p className="project-description">
+                Brief description of the project, technologies used, and your role.
+              </p>
+              <div className="project-tech">
+                <span className="tech-tag">JavaScript</span>
+                <span className="tech-tag">Node.js</span>
+                <span className="tech-tag">Database</span>
+              </div>
+              <div className="project-links">
+                <a href="#" className="project-link">View Project</a>
+                <a href="#" className="project-link">GitHub</a>
+              </div>
+            </div>
+            <div className="project-card">
+              <div className="project-image">🚀</div>
+              <h3>Project Name 3</h3>
+              <p className="project-description">
+                Brief description of the project, technologies used, and your role.
+              </p>
+              <div className="project-tech">
+                <span className="tech-tag">Cloud</span>
+                <span className="tech-tag">Docker</span>
+                <span className="tech-tag">DevOps</span>
+              </div>
+              <div className="project-links">
+                <a href="#" className="project-link">View Project</a>
+                <a href="#" className="project-link">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Skills Section */}
+      <section id="skills" className="section skills-section">
+        <div className="container">
+          <h2 className="section-title">Skills</h2>
+          <div className="skills-container">
+            <div className="skills-category">
+              <h3>Frontend</h3>
+              <div className="skills-list">
+                <span className="skill-item">React</span>
+                <span className="skill-item">JavaScript</span>
+                <span className="skill-item">HTML/CSS</span>
+                <span className="skill-item">TypeScript</span>
+              </div>
+            </div>
+            <div className="skills-category">
+              <h3>Backend</h3>
+              <div className="skills-list">
+                <span className="skill-item">Python</span>
+                <span className="skill-item">FastAPI</span>
+                <span className="skill-item">Node.js</span>
+                <span className="skill-item">REST APIs</span>
+              </div>
+            </div>
+            <div className="skills-category">
+              <h3>Tools & Technologies</h3>
+              <div className="skills-list">
+                <span className="skill-item">Git</span>
+                <span className="skill-item">Docker</span>
+                <span className="skill-item">Cloud Run</span>
+                <span className="skill-item">CI/CD</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="section contact-section">
+        <div className="container">
+          <h2 className="section-title">Get In Touch</h2>
+          <div className="contact-content">
+            <div className="contact-info">
+              <p className="contact-description">
+                I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
+              </p>
+              <div className="contact-details">
+                <div className="contact-item">
+                  <span className="contact-icon">📧</span>
+                  <span>your.email@example.com</span>
+                </div>
+                <div className="contact-item">
+                  <span className="contact-icon">💼</span>
+                  <span>LinkedIn Profile</span>
+                </div>
+                <div className="contact-item">
+                  <span className="contact-icon">🐙</span>
+                  <span>GitHub Profile</span>
+                </div>
+                <div className="contact-item">
+                  <span className="contact-icon">📱</span>
+                  <span>+1 (123) 456-7890</span>
+                </div>
+              </div>
+            </div>
+            <div className="contact-form">
+              <form>
+                <div className="form-group">
+                  <input type="text" placeholder="Your Name" required />
+                </div>
+                <div className="form-group">
+                  <input type="email" placeholder="Your Email" required />
+                </div>
+                <div className="form-group">
+                  <textarea placeholder="Your Message" rows="5" required></textarea>
+                </div>
+                <button type="submit" className="btn btn-primary">Send Message</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="footer">
+        <div className="container">
+          <p>&copy; {new Date().getFullYear()} Avi. All rights reserved.</p>
+        </div>
+      </footer>
     </div>
   );
 }
 
 export default App;
-
