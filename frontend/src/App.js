@@ -253,20 +253,20 @@ function App() {
               </p>
               <div className="contact-details">
                 <div className="contact-item">
-                  <span className="contact-icon">📧</span>
-                  <span>your.email@example.com</span>
+                  <span className="contact-icon">✉️</span>
+                  <a href="mailto:akatare@purdue.edu" className="contact-link">akatare@purdue.edu</a>
+                </div>
+                <div className="contact-item">
+                  <span className="contact-icon">✉️</span>
+                  <a href="mailto:avikatare17@gmail.com" className="contact-link">avikatare17@gmail.com</a>
+                </div>
+                <div className="contact-item">
+                  <span className="contact-icon">📞</span>
+                  <a href="tel:+14698883209" className="contact-link">469-888-3209</a>
                 </div>
                 <div className="contact-item">
                   <span className="contact-icon">💼</span>
-                  <span>LinkedIn Profile</span>
-                </div>
-                <div className="contact-item">
-                  <span className="contact-icon">🐙</span>
-                  <span>GitHub Profile</span>
-                </div>
-                <div className="contact-item">
-                  <span className="contact-icon">📱</span>
-                  <span>+1 (123) 456-7890</span>
+                  <a href="https://www.linkedin.com/in/avi-katare" target="_blank" rel="noopener noreferrer" className="contact-link">www.linkedin.com/in/avi-katare</a>
                 </div>
               </div>
             </div>
