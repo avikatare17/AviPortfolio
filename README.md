@@ -145,7 +145,16 @@ A full-stack application with a Python FastAPI backend and React frontend, desig
    gcloud services enable containerregistry.googleapis.com
    ```
 
-6. **Push to GitHub**:
+6. **Connect to GitHub**:
+   ```bash
+   # Add your GitHub repository as remote
+   git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+   
+   # Push to GitHub
+   git branch -M main
+   git push -u origin main
+   ```
+   
    The workflow will automatically deploy to Cloud Run when you push to the `main` branch.
 
 ### Manual Deployment
