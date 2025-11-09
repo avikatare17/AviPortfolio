@@ -87,14 +87,15 @@ function App() {
 
       {/* Landing Page / Home Section */}
       <section id="home" className="section home-section">
+        <div className="hero-background">
+          <div className="hero-overlay"></div>
+        </div>
         <div className="container">
           <div className="hero-content">
-            <h1 className="hero-title">
-              Hi, I'm <span className="highlight">Avi</span>
-            </h1>
-            <p className="hero-subtitle">Software Developer & Engineer</p>
+            <h1 className="hero-title">AVI KATARE</h1>
+            <p className="hero-subtitle">Plant Floor Systems Engineer at General Motors</p>
             <p className="hero-description">
-              Welcome to my portfolio. Explore my work, skills, and experience.
+              Data science, to me, feels like solving a giant, dynamic puzzle — where each dataset is a new challenge and every insight is a missing piece. It blends logic, creativity, and curiosity, much like artificial intelligence, which transforms these solved puzzles into systems that can learn, adapt, and optimize. I'm especially fascinated by Automated Guided Vehicles (AGVs); during my time at GM, I followed these machines around the plant floor, studying how they make navigation decisions using cameras and how they fault out when people get too close. While they currently require manual resets, I'm passionate about developing smarter, self-recovering systems to reduce downtime and prevent these robots from becoming factory bottlenecks. Outside of tech, I find joy in exploring the world — flying on aircraft like the A350, B777, ATR72, and more — and on the ground, I'm a devoted cricket fan, proudly cheering for Team India and the legendary MS Dhoni.
             </p>
             <div className="hero-buttons">
               <button 
