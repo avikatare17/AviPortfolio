@@ -119,23 +119,27 @@ function App() {
       <section id="education" className="section education-section">
         <div className="container">
           <h2 className="section-title">Education</h2>
-          <div className="education-grid">
+          <div className="education-container">
             <div className="education-card">
-              <div className="education-icon">🎓</div>
-              <h3>Degree Name</h3>
-              <p className="education-institution">Institution Name</p>
-              <p className="education-period">Year - Year</p>
+              <div className="education-header">
+                <h3 className="education-degree">Master of Science in Computer Science</h3>
+                <span className="education-dates">2020 - 2022</span>
+              </div>
+              <p className="education-institution">University Name</p>
+              <p className="education-location">City, State</p>
               <p className="education-description">
-                Description of your degree, major, and key achievements.
+                Focused on software engineering, data structures, and artificial intelligence. Completed thesis on machine learning applications in autonomous systems.
               </p>
             </div>
             <div className="education-card">
-              <div className="education-icon">📚</div>
-              <h3>Additional Education</h3>
-              <p className="education-institution">Institution Name</p>
-              <p className="education-period">Year - Year</p>
+              <div className="education-header">
+                <h3 className="education-degree">Bachelor of Science in Engineering</h3>
+                <span className="education-dates">2016 - 2020</span>
+              </div>
+              <p className="education-institution">University Name</p>
+              <p className="education-location">City, State</p>
               <p className="education-description">
-                Certifications, courses, or additional training.
+                Majored in Computer Engineering with a focus on systems design and software development. Graduated with honors.
               </p>
             </div>
           </div>
