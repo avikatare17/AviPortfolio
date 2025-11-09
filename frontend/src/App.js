@@ -210,32 +210,93 @@ function App() {
       <section id="skills" className="section skills-section">
         <div className="container">
           <h2 className="section-title">Skills</h2>
-          <div className="skills-container">
-            <div className="skills-category">
-              <h3>Frontend</h3>
-              <div className="skills-list">
-                <span className="skill-item">React</span>
-                <span className="skill-item">JavaScript</span>
-                <span className="skill-item">HTML/CSS</span>
-                <span className="skill-item">TypeScript</span>
+          <div className="skills-chart-container">
+            <div className="skills-chart">
+              <div className="chart-y-axis">
+                <span className="axis-label">Skills</span>
               </div>
-            </div>
-            <div className="skills-category">
-              <h3>Backend</h3>
-              <div className="skills-list">
-                <span className="skill-item">Python</span>
-                <span className="skill-item">FastAPI</span>
-                <span className="skill-item">Node.js</span>
-                <span className="skill-item">REST APIs</span>
-              </div>
-            </div>
-            <div className="skills-category">
-              <h3>Tools & Technologies</h3>
-              <div className="skills-list">
-                <span className="skill-item">Git</span>
-                <span className="skill-item">Docker</span>
-                <span className="skill-item">Cloud Run</span>
-                <span className="skill-item">CI/CD</span>
+              <div className="chart-content">
+                <div className="chart-x-axis">
+                  <span className="x-axis-label">0</span>
+                  <span className="x-axis-label">0.5</span>
+                  <span className="x-axis-label">1.0</span>
+                  <span className="x-axis-label">1.5</span>
+                  <span className="x-axis-label">2.0</span>
+                  <span className="axis-label">Experience (Years)</span>
+                </div>
+                <div className="chart-bars">
+                  <div className="skill-bar-row">
+                    <span className="skill-label">Python</span>
+                    <div className="skill-bar-container">
+                      <div className="skill-bar" style={{ width: '100%' }} data-years="2.0">
+                        <span className="skill-value">2.0 years</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="skill-bar-row">
+                    <span className="skill-label">SQL</span>
+                    <div className="skill-bar-container">
+                      <div className="skill-bar" style={{ width: '75%' }} data-years="1.5">
+                        <span className="skill-value">1.5 years</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="skill-bar-row">
+                    <span className="skill-label">Databases</span>
+                    <div className="skill-bar-container">
+                      <div className="skill-bar" style={{ width: '75%' }} data-years="1.5">
+                        <span className="skill-value">1.5 years</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="skill-bar-row">
+                    <span className="skill-label">PowerBI</span>
+                    <div className="skill-bar-container">
+                      <div className="skill-bar" style={{ width: '75%' }} data-years="1.5">
+                        <span className="skill-value">1.5 years</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="skill-bar-row">
+                    <span className="skill-label">R</span>
+                    <div className="skill-bar-container">
+                      <div className="skill-bar" style={{ width: '50%' }} data-years="1.0">
+                        <span className="skill-value">1.0 years</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="skill-bar-row">
+                    <span className="skill-label">Azure</span>
+                    <div className="skill-bar-container">
+                      <div className="skill-bar" style={{ width: '25%' }} data-years="0.5">
+                        <span className="skill-value">0.5 years</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="skill-bar-row">
+                    <span className="skill-label">Tableau</span>
+                    <div className="skill-bar-container">
+                      <div className="skill-bar" style={{ width: '25%' }} data-years="0.5">
+                        <span className="skill-value">0.5 years</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="skill-bar-row">
+                    <span className="skill-label">SAS</span>
+                    <div className="skill-bar-container">
+                      <div className="skill-bar" style={{ width: '25%' }} data-years="0.5">
+                        <span className="skill-value">0.5 years</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="chart-grid-lines">
+                  <div className="grid-line" style={{ left: '0%' }}></div>
+                  <div className="grid-line" style={{ left: '25%' }}></div>
+                  <div className="grid-line" style={{ left: '50%' }}></div>
+                  <div className="grid-line" style={{ left: '75%' }}></div>
+                  <div className="grid-line" style={{ left: '100%' }}></div>
+                </div>
               </div>
             </div>
           </div>
