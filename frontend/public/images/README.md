@@ -30,11 +30,25 @@ The image should be:
 
 **CSS Class:** `.education-background` in `frontend/src/App.css`
 
+### Experience Section Background
+
+**Filename:** `experience-background.jpg`
+
+The image should be:
+- High resolution (recommended: 1920x1080 or larger)
+- Optimized for web (compressed to reduce file size)
+- Format: JPG, PNG, or WebP
+
+**Image Description:** Industrial manufacturing environment with robotic arms working on automotive assembly line
+
+**CSS Class:** `.experience-background` in `frontend/src/App.css`
+
 ### Alternative Filenames
 
 If you use different filenames, update the `background-image` URLs in `frontend/src/App.css`:
 - Landing page: `.hero-background` class
 - Education section: `.education-background` class
+- Experience section: `.experience-background` class
 
 ### Image Optimization
 

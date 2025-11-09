@@ -109,6 +109,54 @@ The image is configured with:
 - **Cards**: Semi-transparent white cards (95% opacity) with blur effect for content
 - **Title**: White text with shadow for visibility
 
+## 3. Experience Section Background Image
+
+The Experience section is configured to use an industrial/manufacturing background image.
+
+### Step 1: Add the Image
+
+1. Place your manufacturing background image in the following location:
+   ```
+   frontend/public/images/experience-background.jpg
+   ```
+
+2. If your image has a different filename or format, update the CSS in `frontend/src/App.css`:
+   - Find the `.experience-background` class
+   - Update the `background-image` URL to match your filename
+
+### Step 2: Image Requirements
+
+- **Recommended Format**: JPG, PNG, or WebP
+- **Recommended Size**: 1920x1080 pixels or larger
+- **File Size**: Optimize for web (aim for under 500KB)
+- **Aspect Ratio**: 16:9 or similar wide format works best
+
+### Step 3: Verify the Experience Section Image
+
+1. Start the development server (if not already running):
+   ```bash
+   cd frontend
+   npm start
+   ```
+
+2. Navigate to the Experience section and verify the background image appears correctly
+
+3. Check that:
+   - The background image is visible
+   - The overlay provides good contrast for white text
+   - Experience cards are readable over the background
+   - The image looks good on different screen sizes
+
+### Experience Section Image Configuration
+
+The image is configured with:
+- **Background Size**: Cover (fills the entire area)
+- **Background Position**: Center
+- **Background Attachment**: Fixed (parallax effect on desktop, scroll on mobile)
+- **Overlay**: Dark semi-transparent overlay (60% opacity) for text readability
+- **Cards**: Semi-transparent white cards (95% opacity) with blur effect for content
+- **Title**: White text with shadow for visibility
+
 ### Troubleshooting
 
 **Image not showing?**
@@ -131,6 +179,12 @@ The image is configured with:
 - Increase the overlay opacity in `.education-overlay` class (currently 0.6)
 - Increase the card background opacity in `.education-card` class (currently 0.95)
 - Adjust the title text shadow in `.education-title` class
+- Increase overlay opacity on mobile (currently 0.75 in media queries)
+
+**Text not readable on Experience Section?**
+- Increase the overlay opacity in `.experience-overlay` class (currently 0.6)
+- Increase the card background opacity in `.experience-card` class (currently 0.95)
+- Adjust the title text shadow in `.experience-title` class
 - Increase overlay opacity on mobile (currently 0.75 in media queries)
 
 ### Alternative: Using a CDN
