@@ -8,7 +8,7 @@ function App() {
   useEffect(() => {
     // Handle scroll to update active section
     const handleScroll = () => {
-      const sections = ['home', 'education', 'projects', 'skills', 'contact'];
+      const sections = ['home', 'education', 'experience', 'projects', 'skills', 'contact'];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -44,6 +44,7 @@ function App() {
   const navItems = [
     { id: 'home', label: 'Home' },
     { id: 'education', label: 'Education' },
+    { id: 'experience', label: 'Experience' },
     { id: 'projects', label: 'Projects' },
     { id: 'skills', label: 'Skills' },
     { id: 'contact', label: 'Contact' }
@@ -143,6 +144,40 @@ function App() {
               <p className="education-location">City, State</p>
               <p className="education-description">
                 Majored in Computer Engineering with a focus on systems design and software development. Graduated with honors.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Experience Section */}
+      <section id="experience" className="section experience-section">
+        <div className="experience-background">
+          <div className="experience-overlay"></div>
+        </div>
+        <div className="container">
+          <h2 className="section-title experience-title">Experience</h2>
+          <div className="experience-container">
+            <div className="experience-card">
+              <div className="experience-header">
+                <h3 className="experience-title-text">Plant Floor Systems Engineer</h3>
+                <span className="experience-dates">2024 - Present</span>
+              </div>
+              <p className="experience-company">General Motors</p>
+              <p className="experience-location">Location</p>
+              <p className="experience-description">
+                Working on plant floor systems, focusing on Automated Guided Vehicles (AGVs) and their navigation systems. Studying how AGVs make navigation decisions using cameras and developing smarter, self-recovering systems to reduce downtime.
+              </p>
+            </div>
+            <div className="experience-card">
+              <div className="experience-header">
+                <h3 className="experience-title-text">Previous Position</h3>
+                <span className="experience-dates">Start Year - End Year</span>
+              </div>
+              <p className="experience-company">Company Name</p>
+              <p className="experience-location">City, State</p>
+              <p className="experience-description">
+                Description of your role, responsibilities, and achievements. Update this with your actual experience from LinkedIn.
               </p>
             </div>
           </div>
