@@ -1,6 +1,10 @@
 # Image Setup Instructions
 
-## Landing Page Background Image
+## Background Images
+
+This portfolio uses background images for the landing page and education section.
+
+## 1. Landing Page Background Image
 
 The landing page is configured to use an aircraft background image. To set it up:
 
@@ -36,7 +40,7 @@ To reduce file size and improve load times:
    convert aircraft-background.jpg -quality 85 -resize 1920x1080^ aircraft-background-optimized.jpg
    ```
 
-### Step 4: Verify the Image
+### Step 4: Verify the Landing Page Image
 
 1. Start the development server:
    ```bash
@@ -48,7 +52,7 @@ To reduce file size and improve load times:
 
 3. Test on different screen sizes to ensure the image looks good on mobile, tablet, and desktop
 
-### Current Image Configuration
+### Landing Page Image Configuration
 
 The image is configured with:
 - **Background Size**: Cover (fills the entire area)
@@ -56,6 +60,54 @@ The image is configured with:
 - **Background Attachment**: Fixed (parallax effect on desktop)
 - **Overlay**: Dark semi-transparent overlay for text readability
 - **Fallback**: Dark background color if image fails to load
+
+## 2. Education Section Background Image
+
+The Education section is configured to use a classroom/lecture hall background image.
+
+### Step 1: Add the Image
+
+1. Place your classroom background image in the following location:
+   ```
+   frontend/public/images/education-background.jpg
+   ```
+
+2. If your image has a different filename or format, update the CSS in `frontend/src/App.css`:
+   - Find the `.education-background` class
+   - Update the `background-image` URL to match your filename
+
+### Step 2: Image Requirements
+
+- **Recommended Format**: JPG, PNG, or WebP
+- **Recommended Size**: 1920x1080 pixels or larger
+- **File Size**: Optimize for web (aim for under 500KB)
+- **Aspect Ratio**: 16:9 or similar wide format works best
+
+### Step 3: Verify the Education Section Image
+
+1. Start the development server (if not already running):
+   ```bash
+   cd frontend
+   npm start
+   ```
+
+2. Navigate to the Education section and verify the background image appears correctly
+
+3. Check that:
+   - The background image is visible
+   - The overlay provides good contrast for white text
+   - Education cards are readable over the background
+   - The image looks good on different screen sizes
+
+### Education Section Image Configuration
+
+The image is configured with:
+- **Background Size**: Cover (fills the entire area)
+- **Background Position**: Center
+- **Background Attachment**: Fixed (parallax effect on desktop, scroll on mobile)
+- **Overlay**: Dark semi-transparent overlay (60% opacity) for text readability
+- **Cards**: Semi-transparent white cards (95% opacity) with blur effect for content
+- **Title**: White text with shadow for visibility
 
 ### Troubleshooting
 
@@ -70,10 +122,16 @@ The image is configured with:
 - Try `contain` instead of `cover` if you want to see the full image
 - Adjust `background-position` to focus on a specific area
 
-**Text not readable?**
+**Text not readable on Landing Page?**
 - Increase the overlay opacity in `.hero-overlay` class
 - Adjust text shadow in `.hero-title`, `.hero-subtitle`, and `.hero-description`
 - Increase the background opacity of `.hero-content`
+
+**Text not readable on Education Section?**
+- Increase the overlay opacity in `.education-overlay` class (currently 0.6)
+- Increase the card background opacity in `.education-card` class (currently 0.95)
+- Adjust the title text shadow in `.education-title` class
+- Increase overlay opacity on mobile (currently 0.75 in media queries)
 
 ### Alternative: Using a CDN
 

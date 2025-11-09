@@ -117,8 +117,11 @@ function App() {
 
       {/* Education Section */}
       <section id="education" className="section education-section">
+        <div className="education-background">
+          <div className="education-overlay"></div>
+        </div>
         <div className="container">
-          <h2 className="section-title">Education</h2>
+          <h2 className="section-title education-title">Education</h2>
           <div className="education-container">
             <div className="education-card">
               <div className="education-header">

@@ -1,23 +1,40 @@
 # Images Directory
 
-## Background Image
+## Background Images
 
-Please place your aircraft background image in this directory with the filename:
+Please place your background images in this directory.
 
-**`aircraft-background.jpg`**
+### Landing Page Background
+
+**Filename:** `aircraft-background.jpg`
 
 The image should be:
 - High resolution (recommended: 1920x1080 or larger)
 - Optimized for web (compressed to reduce file size)
 - Format: JPG, PNG, or WebP
 
-### Image Description
+**Image Description:** Airbus A380 with the ANA Flying Honu livery (sea turtle design)
 
-The image should be of an Airbus A380 with the ANA Flying Honu livery (sea turtle design) as described in the prompt.
+**CSS Class:** `.hero-background` in `frontend/src/App.css`
 
-### Alternative Filename
+### Education Section Background
 
-If you use a different filename, update the `background-image` URL in `frontend/src/App.css` in the `.hero-background` class.
+**Filename:** `education-background.jpg`
+
+The image should be:
+- High resolution (recommended: 1920x1080 or larger)
+- Optimized for web (compressed to reduce file size)
+- Format: JPG, PNG, or WebP
+
+**Image Description:** Modern lecture hall or classroom with students and instructor
+
+**CSS Class:** `.education-background` in `frontend/src/App.css`
+
+### Alternative Filenames
+
+If you use different filenames, update the `background-image` URLs in `frontend/src/App.css`:
+- Landing page: `.hero-background` class
+- Education section: `.education-background` class
 
 ### Image Optimization
 
@@ -25,4 +42,5 @@ For best performance, consider:
 - Using WebP format for smaller file sizes
 - Compressing the image (tools like TinyPNG, ImageOptim)
 - Using multiple sizes for responsive design (optional)
+- Aim for file sizes under 500KB for faster loading
 
