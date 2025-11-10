@@ -188,53 +188,76 @@ function App() {
       <section id="projects" className="section projects-section">
         <div className="container">
           <h2 className="section-title">Projects</h2>
-          <div className="projects-grid">
+          <div className="projects-container">
+            {/* Project 3 */}
             <div className="project-card">
-              <div className="project-image">📱</div>
-              <h3>Project Name 1</h3>
+              <div className="project-header">
+                <h3 className="project-title">Relationship between Passenger Traffic and Weather to Predict Airport Delays</h3>
+                <span className="project-year">Fall 2023</span>
+              </div>
               <p className="project-description">
-                Brief description of the project, technologies used, and your role.
+                In this project, I used logistic regression model to predict the length of the delay at USA's 20 largest airports based on Passenger numbers and Weather conditions at the airport. I found that the relationship is linear. I'm planning future research by adding features like aircraft age, aircraft turnaround time, etc.
               </p>
-              <div className="project-tech">
-                <span className="tech-tag">React</span>
-                <span className="tech-tag">Python</span>
-                <span className="tech-tag">API</span>
+              <div className="project-tools">
+                <span className="tool-label">Tools:</span>
+                <div className="project-tech">
+                  <span className="tech-tag">Python Dataframes</span>
+                  <span className="tech-tag">Power BI</span>
+                  <span className="tech-tag">R</span>
+                  <span className="tech-tag">SAS</span>
+                  <span className="tech-tag">Web Scraping</span>
+                </div>
               </div>
               <div className="project-links">
-                <a href="#" className="project-link">View Project</a>
-                <a href="#" className="project-link">GitHub</a>
+                <span className="project-link-disabled">Project Link: Available on request</span>
               </div>
             </div>
+
+            {/* Project 2 */}
             <div className="project-card">
-              <div className="project-image">💻</div>
-              <h3>Project Name 2</h3>
+              <div className="project-header">
+                <h3 className="project-title">Analyzing Video Game Data Between 1980 and 2020</h3>
+                <span className="project-year">Fall 2021</span>
+              </div>
               <p className="project-description">
-                Brief description of the project, technologies used, and your role.
+                In this project, I explored a large video game sales dataset from Kaggle to identify regional and genre-based performance trends across the industry from 1980 to 2020. Through statistical analyses including Welch's T-tests and ANOVA, I found that video games performed significantly better in North America than in Europe or Japan, and that certain genres and platforms (like Action games and PS2) consistently generated higher revenues. These insights provide strategic recommendations for developers and investors in the gaming industry.
               </p>
-              <div className="project-tech">
-                <span className="tech-tag">JavaScript</span>
-                <span className="tech-tag">Node.js</span>
-                <span className="tech-tag">Database</span>
+              <div className="project-tools">
+                <span className="tool-label">Tools:</span>
+                <div className="project-tech">
+                  <span className="tech-tag">R</span>
+                  <span className="tech-tag">Hypothesis Testing</span>
+                  <span className="tech-tag">Dataset Cleaning</span>
+                  <span className="tech-tag">Data Visualization</span>
+                  <span className="tech-tag">ggplot</span>
+                </div>
               </div>
               <div className="project-links">
-                <a href="#" className="project-link">View Project</a>
-                <a href="#" className="project-link">GitHub</a>
+                <span className="project-link-disabled">Project Link: Available on request</span>
               </div>
             </div>
+
+            {/* Project 1 */}
             <div className="project-card">
-              <div className="project-image">🚀</div>
-              <h3>Project Name 3</h3>
+              <div className="project-header">
+                <h3 className="project-title">Computer Vision for Forest Inventory Analysis (CVFIA)</h3>
+                <span className="project-year">Purdue University, Summer 2021</span>
+              </div>
               <p className="project-description">
-                Brief description of the project, technologies used, and your role.
+                During the summer after my freshman year at Purdue, I completed a data analysis project to estimate tree age using images of bark from various species found in Martell Forest. We collected multi-angle, multi-lighting photos and trained a convolutional neural network to classify tree types like T. Poplar and B. Oak based on bark patterns. This project deepened my understanding of deep learning, data collection, and neural network design.
               </p>
-              <div className="project-tech">
-                <span className="tech-tag">Cloud</span>
-                <span className="tech-tag">Docker</span>
-                <span className="tech-tag">DevOps</span>
+              <div className="project-tools">
+                <span className="tool-label">Tools:</span>
+                <div className="project-tech">
+                  <span className="tech-tag">Neural Networks</span>
+                  <span className="tech-tag">Deep Learning</span>
+                  <span className="tech-tag">Python</span>
+                  <span className="tech-tag">Data Collection</span>
+                  <span className="tech-tag">Data Cleaning</span>
+                </div>
               </div>
               <div className="project-links">
-                <a href="#" className="project-link">View Project</a>
-                <a href="#" className="project-link">GitHub</a>
+                <a href="https://www.youtube.com/watch?v=xulDeYepc9c" target="_blank" rel="noopener noreferrer" className="project-link">View Project Video</a>
               </div>
             </div>
           </div>
