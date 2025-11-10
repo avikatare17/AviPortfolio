@@ -212,26 +212,64 @@ function App() {
         <div className="container">
           <h2 className="section-title experience-title">Experience</h2>
           <div className="experience-container">
+            {/* Experience 1: Plant Floor Systems Co-op */}
             <div className="experience-card">
               <div className="experience-header">
-                <h3 className="experience-title-text">Plant Floor Systems Engineer</h3>
-                <span className="experience-dates">2024 - Present</span>
+                <h3 className="experience-title-text">Plant Floor Systems Co-op</h3>
+                <span className="experience-dates">Jan 2025 - Present</span>
               </div>
               <p className="experience-company">General Motors</p>
-              <p className="experience-location">Location</p>
+              <p className="experience-location">West Lafayette, IN</p>
               <p className="experience-description">
-                Working on plant floor systems, focusing on Automated Guided Vehicles (AGVs) and their navigation systems. Studying how AGVs make navigation decisions using cameras and developing smarter, self-recovering systems to reduce downtime.
+                I create ETL scripts (Microsoft Databricks) for our TBIA app. Before this, I was tasked with updating the access method used for their TBIA app. At first, they were using the default Power BI access method to manage user access. In this situation, a new user would send an email to our team requesting access to one of our four audience groups. We would receive 100 requests per day and must add each user manually to the app. Thus, making it a very tedious process. Also, the app would allow us to only add a total of 1000 users per audience. Thus, we switched the access method to make the user request access through our Glenda portal. Anyone requesting basic user access through Glenda would be given approval immediately while those requiring advanced user access would get it once our team gives them approval (Glenda would send us the user request and were about 5-6 people a day). To combat the user limit enforced by Power BI, each approved user was added to one of four Glenda groups. Each group would be assigned to a specific audience in Power BI. Thus, each audience has only one member (the Glenda group). Each Glenda group has infinite capacity. At the same time, I upskilled myself by doing Udemy courses about Azure services like Databricks, Datalakes, Data Warehouses, etc.
               </p>
             </div>
+            {/* Experience 2: Cybersecurity and Controls Co-op */}
             <div className="experience-card">
               <div className="experience-header">
-                <h3 className="experience-title-text">Previous Position</h3>
-                <span className="experience-dates">Start Year - End Year</span>
+                <h3 className="experience-title-text">Cybersecurity and Controls Co-op</h3>
+                <span className="experience-dates">Aug 2024 - Dec 2024</span>
               </div>
-              <p className="experience-company">Company Name</p>
-              <p className="experience-location">City, State</p>
+              <p className="experience-company">General Motors</p>
+              <p className="experience-location">Marion, IN</p>
               <p className="experience-description">
-                Description of your role, responsibilities, and achievements. Update this with your actual experience from LinkedIn.
+                As part of the cybersecurity team, I updated the ethernet cards for PLCs on the plantfloor using the Control Flash software. As part of the controls team, I was tasked with analyzing 14,000 fault messages on a new press to make sure their logic was sound and that the components mentioned in these messages matched the electrical drawings. As I did not have an electrical engineering background, I attended classes like PLC fundamentals and Controls 1 & 2 offered by GM at their tech center in Warren, MI. Using these new acquired skills, I was able to complete the tasks allotted to me.
+              </p>
+            </div>
+            {/* Experience 3: Device Level Analytics Co-op */}
+            <div className="experience-card">
+              <div className="experience-header">
+                <h3 className="experience-title-text">Device Level Analytics Co-op</h3>
+                <span className="experience-dates">Jan 2024 - June 2024</span>
+              </div>
+              <p className="experience-company">General Motors</p>
+              <p className="experience-location">West Lafayette, IN</p>
+              <p className="experience-description">
+                I created Power BI reports for devices on the plant floor (motion drives, conveyors, etc.). Each report contained location information and baseline(s) information for each device.
+              </p>
+            </div>
+            {/* Experience 4: Device Level Analytics Intern */}
+            <div className="experience-card">
+              <div className="experience-header">
+                <h3 className="experience-title-text">Device Level Analytics Intern</h3>
+                <span className="experience-dates">Jun 2023 - Aug 2023</span>
+              </div>
+              <p className="experience-company">General Motors</p>
+              <p className="experience-location">Warren, MI</p>
+              <p className="experience-description">
+                I was tasked with improving the test they used for doing predictive maintenance at the plant.
+              </p>
+            </div>
+            {/* Experience 5: IT Intern */}
+            <div className="experience-card">
+              <div className="experience-header">
+                <h3 className="experience-title-text">IT Intern</h3>
+                <span className="experience-dates">Jun 2022 - Aug 2022</span>
+              </div>
+              <p className="experience-company">General Motors</p>
+              <p className="experience-location">Toledo, OH</p>
+              <p className="experience-description">
+                During my time with the Cyber Security team at GM, I had created a Java application that would tell you the probability of a cyber-attack on a particular PC in the GM plant. As part of this project, I collected secondary data from GM security websites related to the types of PCs, age of PCs, number of distinct high-risk vulnerabilities for each PC, etc. I then used this data and other derived statistics to make my predictions along with coming up with a rough estimate of how much money GM could lose in a worst-case scenario. During my time with the autonomous forklift team, I helped to test navigation systems of these vehicles. I would test the lasers to make sure that the hardware is aligned such that the light emitted is 2ft away from the vehicle on both sides and is straight. I would send it a test program to test its left/right turns and its lifting mechanism. Finally, I had helped the Industrial Engineering team collect data related to the time taken to complete standardized tasks.
               </p>
             </div>
           </div>
