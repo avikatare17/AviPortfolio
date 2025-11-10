@@ -187,6 +187,62 @@ The image is configured with:
 - Adjust the title text shadow in `.experience-title` class
 - Increase overlay opacity on mobile (currently 0.75 in media queries)
 
+## 4. Projects Section Background Image
+
+The Projects section is configured to use a data visualization/business analytics background image.
+
+### Step 1: Add the Image
+
+1. Place your projects background image in the following location:
+   ```
+   frontend/public/images/projects-background.jpg
+   ```
+
+2. If your image has a different filename or format, update the CSS in `frontend/src/App.css`:
+   - Find the `.projects-background` class
+   - Update the `background-image` URL to match your filename
+
+### Step 2: Image Requirements
+
+- **Recommended Format**: JPG, PNG, or WebP
+- **Recommended Size**: 1920x1080 pixels or larger
+- **File Size**: Optimize for web (aim for under 500KB)
+- **Aspect Ratio**: 16:9 or similar wide format works best
+
+### Step 3: Verify the Projects Section Image
+
+1. Start the development server (if not already running):
+   ```bash
+   cd frontend
+   npm start
+   ```
+
+2. Navigate to the Projects section and verify the background image appears correctly
+
+3. Check that:
+   - The background image is visible
+   - The overlay provides good contrast for white text
+   - Project cards are readable over the background
+   - The image looks good on different screen sizes
+
+### Projects Section Image Configuration
+
+The image is configured with:
+- **Background Size**: Cover (fills the entire area)
+- **Background Position**: Center
+- **Background Attachment**: Fixed (parallax effect on desktop, scroll on mobile)
+- **Overlay**: Dark semi-transparent overlay (60% opacity) for text readability
+- **Cards**: Semi-transparent white cards (95% opacity) with blur effect for content
+- **Title**: White text with shadow for visibility
+
+### Troubleshooting
+
+**Text not readable on Projects Section?**
+- Increase the overlay opacity in `.projects-overlay` class (currently 0.6)
+- Increase the card background opacity in `.project-card` class (currently 0.95)
+- Adjust the title text shadow in `.projects-title` class
+- Increase overlay opacity on mobile (currently 0.75 in media queries)
+
 ### Alternative: Using a CDN
 
 If you prefer to host the image elsewhere:

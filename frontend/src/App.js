@@ -186,8 +186,11 @@ function App() {
 
       {/* Projects Section */}
       <section id="projects" className="section projects-section">
+        <div className="projects-background">
+          <div className="projects-overlay"></div>
+        </div>
         <div className="container">
-          <h2 className="section-title">Projects</h2>
+          <h2 className="section-title projects-title">Projects</h2>
           <div className="projects-container">
             {/* Project 3 */}
             <div className="project-card">

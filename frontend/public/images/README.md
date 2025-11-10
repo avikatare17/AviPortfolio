@@ -43,12 +43,26 @@ The image should be:
 
 **CSS Class:** `.experience-background` in `frontend/src/App.css`
 
+### Projects Section Background
+
+**Filename:** `projects-background.jpg`
+
+The image should be:
+- High resolution (recommended: 1920x1080 or larger)
+- Optimized for web (compressed to reduce file size)
+- Format: JPG, PNG, or WebP
+
+**Image Description:** Modern illustration of business professionals working with data visualizations on a computer monitor
+
+**CSS Class:** `.projects-background` in `frontend/src/App.css`
+
 ### Alternative Filenames
 
 If you use different filenames, update the `background-image` URLs in `frontend/src/App.css`:
 - Landing page: `.hero-background` class
 - Education section: `.education-background` class
 - Experience section: `.experience-background` class
+- Projects section: `.projects-background` class
 
 ### Image Optimization
 
