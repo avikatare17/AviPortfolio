@@ -164,26 +164,40 @@ function App() {
         <div className="container">
           <h2 className="section-title education-title">Education</h2>
           <div className="education-container">
+            {/* Degree 1: Master of Business and Technology */}
             <div className="education-card">
               <div className="education-header">
-                <h3 className="education-degree">Master of Science in Computer Science</h3>
-                <span className="education-dates">2020 - 2022</span>
+                <h3 className="education-degree">Master of Business and Technology with concentration in Robotics</h3>
+                <span className="education-dates">Aug 2025 - Dec 2026</span>
               </div>
-              <p className="education-institution">University Name</p>
-              <p className="education-location">City, State</p>
+              <p className="education-institution">Daniel School of Business, Purdue University</p>
+              <p className="education-location">West Lafayette, IN</p>
               <p className="education-description">
-                Focused on software engineering, data structures, and artificial intelligence. Completed thesis on machine learning applications in autonomous systems.
+                The Master of Business and Technology (MBT) program at Purdue University combines advanced business strategy with emerging technologies like robotics, AI, and data analytics. It's designed to prepare students to lead tech-driven innovation across industries by blending technical skills with business acumen. The program emphasizes hands-on learning in areas such as autonomous systems, digital transformation, and cloud-based solutions. My electives are Intro to Robotics, Entrepreneurship, Statistical Modelling and AI in Decision Making.
               </p>
             </div>
+            {/* Degree 2: MicroMaster's in Supply Chain Management */}
             <div className="education-card">
               <div className="education-header">
-                <h3 className="education-degree">Bachelor of Science in Engineering</h3>
-                <span className="education-dates">2016 - 2020</span>
+                <h3 className="education-degree">MicroMaster's in Supply Chain Management</h3>
+                <span className="education-dates">Jan 2025 - Jun 2026</span>
               </div>
-              <p className="education-institution">University Name</p>
-              <p className="education-location">City, State</p>
+              <p className="education-institution">MIT</p>
+              <p className="education-location">Cambridge, MA</p>
               <p className="education-description">
-                Majored in Computer Engineering with a focus on systems design and software development. Graduated with honors.
+                In this degree I covered topics like Supply Chain analytics, design, fundamentals, dynamics and tech systems.
+              </p>
+            </div>
+            {/* Degree 3: Bachelor's of Science in Data Science and Artificial Intelligence */}
+            <div className="education-card">
+              <div className="education-header">
+                <h3 className="education-degree">Bachelor's of Science in Data Science and Artificial Intelligence</h3>
+                <span className="education-dates">Aug 2020 - Dec 2023</span>
+              </div>
+              <p className="education-institution">Purdue University</p>
+              <p className="education-location">West Lafayette, IN</p>
+              <p className="education-description">
+                I was on the dean's List 5 times and got Semester Honors 3 times. I learned about Time Series, Relational Databases, Python for Data Science, Intro to AI, Data Mining and Machine Learning, etc.
               </p>
             </div>
           </div>
