@@ -362,93 +362,113 @@ function App() {
       {/* Skills Section */}
       <section id="skills" className="section skills-section">
         <div className="container">
-          <h2 className="section-title">Skills</h2>
+          <h2 className="section-title skills-title">Skills and Experience (in years):</h2>
           <div className="skills-chart-container">
             <div className="skills-chart">
-              <div className="chart-y-axis">
-                <span className="axis-label">Skills</span>
-              </div>
-              <div className="chart-content">
-                <div className="chart-x-axis">
-                  <span className="x-axis-label">0</span>
-                  <span className="x-axis-label">0.5</span>
-                  <span className="x-axis-label">1.0</span>
-                  <span className="x-axis-label">1.5</span>
-                  <span className="x-axis-label">2.0</span>
-                  <span className="axis-label">Experience (Years)</span>
-                </div>
-                <div className="chart-bars">
-                  <div className="skill-bar-row">
-                    <span className="skill-label">Python</span>
-                    <div className="skill-bar-container">
-                      <div className="skill-bar" style={{ width: '100%' }} data-years="2.0">
-                        <span className="skill-value">2.0 years</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="skill-bar-row">
-                    <span className="skill-label">SQL</span>
-                    <div className="skill-bar-container">
-                      <div className="skill-bar" style={{ width: '75%' }} data-years="1.5">
-                        <span className="skill-value">1.5 years</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="skill-bar-row">
-                    <span className="skill-label">Databases</span>
-                    <div className="skill-bar-container">
-                      <div className="skill-bar" style={{ width: '75%' }} data-years="1.5">
-                        <span className="skill-value">1.5 years</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="skill-bar-row">
-                    <span className="skill-label">PowerBI</span>
-                    <div className="skill-bar-container">
-                      <div className="skill-bar" style={{ width: '75%' }} data-years="1.5">
-                        <span className="skill-value">1.5 years</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="skill-bar-row">
-                    <span className="skill-label">R</span>
-                    <div className="skill-bar-container">
-                      <div className="skill-bar" style={{ width: '50%' }} data-years="1.0">
-                        <span className="skill-value">1.0 years</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="skill-bar-row">
-                    <span className="skill-label">Azure</span>
-                    <div className="skill-bar-container">
-                      <div className="skill-bar" style={{ width: '25%' }} data-years="0.5">
-                        <span className="skill-value">0.5 years</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="skill-bar-row">
-                    <span className="skill-label">Tableau</span>
-                    <div className="skill-bar-container">
-                      <div className="skill-bar" style={{ width: '25%' }} data-years="0.5">
-                        <span className="skill-value">0.5 years</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="skill-bar-row">
-                    <span className="skill-label">SAS</span>
-                    <div className="skill-bar-container">
-                      <div className="skill-bar" style={{ width: '25%' }} data-years="0.5">
-                        <span className="skill-value">0.5 years</span>
-                      </div>
-                    </div>
+              <div className="chart-bars">
+                <div className="skill-bar-row">
+                  <span className="skill-label">Python</span>
+                  <div className="skill-separator"></div>
+                  <div className="skill-bar-container">
+                    <div className="skill-bar" style={{ width: '300px' }} data-years="2.0"></div>
+                    <span className="skill-value">2.0 years</span>
                   </div>
                 </div>
-                <div className="chart-grid-lines">
-                  <div className="grid-line" style={{ left: '0%' }}></div>
-                  <div className="grid-line" style={{ left: '25%' }}></div>
-                  <div className="grid-line" style={{ left: '50%' }}></div>
-                  <div className="grid-line" style={{ left: '75%' }}></div>
-                  <div className="grid-line" style={{ left: '100%' }}></div>
+                <div className="skill-bar-row">
+                  <span className="skill-label">Hypothesis Testing</span>
+                  <div className="skill-separator"></div>
+                  <div className="skill-bar-container">
+                    <div className="skill-bar" style={{ width: '300px' }} data-years="2.0"></div>
+                    <span className="skill-value">2.0 years</span>
+                  </div>
+                </div>
+                <div className="skill-bar-row">
+                  <span className="skill-label">Data Structures</span>
+                  <div className="skill-separator"></div>
+                  <div className="skill-bar-container">
+                    <div className="skill-bar" style={{ width: '300px' }} data-years="2.0"></div>
+                    <span className="skill-value">2.0 years</span>
+                  </div>
+                </div>
+                <div className="skill-bar-row">
+                  <span className="skill-label">Algorithms</span>
+                  <div className="skill-separator"></div>
+                  <div className="skill-bar-container">
+                    <div className="skill-bar" style={{ width: '300px' }} data-years="2.0"></div>
+                    <span className="skill-value">2.0 years</span>
+                  </div>
+                </div>
+                <div className="skill-bar-row">
+                  <span className="skill-label">SQL</span>
+                  <div className="skill-separator"></div>
+                  <div className="skill-bar-container">
+                    <div className="skill-bar" style={{ width: '225px' }} data-years="1.5"></div>
+                    <span className="skill-value">1.5 years</span>
+                  </div>
+                </div>
+                <div className="skill-bar-row">
+                  <span className="skill-label">Databases</span>
+                  <div className="skill-separator"></div>
+                  <div className="skill-bar-container">
+                    <div className="skill-bar" style={{ width: '225px' }} data-years="1.5"></div>
+                    <span className="skill-value">1.5 years</span>
+                  </div>
+                </div>
+                <div className="skill-bar-row">
+                  <span className="skill-label">Power BI</span>
+                  <div className="skill-separator"></div>
+                  <div className="skill-bar-container">
+                    <div className="skill-bar" style={{ width: '225px' }} data-years="1.5"></div>
+                    <span className="skill-value">1.5 years</span>
+                  </div>
+                </div>
+                <div className="skill-bar-row">
+                  <span className="skill-label">R</span>
+                  <div className="skill-separator"></div>
+                  <div className="skill-bar-container">
+                    <div className="skill-bar" style={{ width: '150px' }} data-years="1.0"></div>
+                    <span className="skill-value">1.0 year</span>
+                  </div>
+                </div>
+                <div className="skill-bar-row">
+                  <span className="skill-label">Java</span>
+                  <div className="skill-separator"></div>
+                  <div className="skill-bar-container">
+                    <div className="skill-bar" style={{ width: '150px' }} data-years="1.0"></div>
+                    <span className="skill-value">1.0 year</span>
+                  </div>
+                </div>
+                <div className="skill-bar-row">
+                  <span className="skill-label">Azure</span>
+                  <div className="skill-separator"></div>
+                  <div className="skill-bar-container">
+                    <div className="skill-bar" style={{ width: '75px' }} data-years="0.5"></div>
+                    <span className="skill-value">0.5 years</span>
+                  </div>
+                </div>
+                <div className="skill-bar-row">
+                  <span className="skill-label">Tableau</span>
+                  <div className="skill-separator"></div>
+                  <div className="skill-bar-container">
+                    <div className="skill-bar" style={{ width: '75px' }} data-years="0.5"></div>
+                    <span className="skill-value">0.5 years</span>
+                  </div>
+                </div>
+                <div className="skill-bar-row">
+                  <span className="skill-label">SAS</span>
+                  <div className="skill-separator"></div>
+                  <div className="skill-bar-container">
+                    <div className="skill-bar" style={{ width: '75px' }} data-years="0.5"></div>
+                    <span className="skill-value">0.5 years</span>
+                  </div>
+                </div>
+                <div className="skill-bar-row">
+                  <span className="skill-label">C</span>
+                  <div className="skill-separator"></div>
+                  <div className="skill-bar-container">
+                    <div className="skill-bar" style={{ width: '75px' }} data-years="0.5"></div>
+                    <span className="skill-value">0.5 years</span>
+                  </div>
                 </div>
               </div>
             </div>
