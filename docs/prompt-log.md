@@ -69,7 +69,7 @@ This document contains a log of all prompts and requests made during the develop
 ## Session 3: Documentation
 
 ### Prompt 3
-**Date**: Current Session  
+**Date**: Follow-up Session  
 **Request**: Create a prompt log and a folder containing all planning documents.
 
 **Actions Taken**:
@@ -81,36 +81,9 @@ This document contains a log of all prompts and requests made during the develop
 - Created development guide
 - Created project structure document
 
-## Session 4: Portfolio Transformation
+## Session 4: Landing Page Customization
 
 ### Prompt 4
-**Date**: Follow-up Session  
-**Request**: On the single page app there should a landing page along with 4 sections - Education, Projects, Skills and Contact Information. From the landing page I should be able to navigate to the other sections. The single page app should be able to work on a desktop, tablet and mobile phone.
-
-**Actions Taken**:
-- Transformed the application from a CRUD app to a portfolio website
-- Created landing page with hero section
-- Added Education section with cards for degrees/certifications
-- Added Projects section with project cards and technology tags
-- Added Skills section with categorized skills
-- Added Contact section with contact form and information
-- Implemented smooth scrolling navigation
-- Added responsive navigation with mobile hamburger menu
-- Created fully responsive design for desktop, tablet, and mobile
-- Removed item management API endpoints from backend
-- Simplified backend to only serve static files and health check
-- Removed unused axios dependency
-
-**Files Modified**:
-- `frontend/src/App.js` - Complete rewrite for portfolio structure
-- `frontend/src/App.css` - Complete redesign for portfolio styling
-- `frontend/src/index.css` - Updated base styles
-- `backend/main.py` - Simplified to remove CRUD endpoints
-- `frontend/package.json` - Removed axios dependency
-
-## Session 5: Landing Page Customization
-
-### Prompt 5
 **Date**: Follow-up Session  
 **Request**: On the landing page use the attached image as the background for the landing page. In the center of this page display the name "Avi Katare" in bold and all caps. This is the title of the page. Under the title add a sub heading saying "Plant Floor Systems Engineer at general Motors". Below it a paragraph text with personal information about data science, AI, AGVs, travel, and cricket.
 
@@ -130,9 +103,9 @@ This document contains a log of all prompts and requests made during the develop
 - `IMAGE-SETUP.md` - Created image setup guide
 - `frontend/public/images/README.md` - Added image documentation
 
-## Session 6: Education Section Card Layout
+## Session 5: Education Section Card Layout
 
-### Prompt 6
+### Prompt 5
 **Date**: Follow-up Session  
 **Request**: For the Education section, place the degrees in a card layout. It should look like the first image attached. Use the data from my resume in linkedin. My linkedin link is www.linkedin.com/in/avi-katare
 
@@ -151,9 +124,9 @@ This document contains a log of all prompts and requests made during the develop
 - `frontend/src/App.css` - Added card layout styling
 - `EDUCATION-DATA.md` - Created guide for updating education data
 
-## Session 7: Education Section Background
+## Session 6: Education Section Background
 
-### Prompt 7
+### Prompt 6
 **Date**: Follow-up Session  
 **Request**: Use this image as the background for the education section (classroom/lecture hall image).
 
@@ -171,9 +144,9 @@ This document contains a log of all prompts and requests made during the develop
 - `IMAGE-SETUP.md` - Added Education section image setup
 - `frontend/public/images/README.md` - Updated with Education image info
 
-## Session 8: Contact Information
+## Session 7: Contact Information
 
-### Prompt 8
+### Prompt 7
 **Date**: Follow-up Session  
 **Request**: For the contact information section add email - first is work email "akatare@purdue.edu" then my personal email "avikatare17@gmail.com". Below it add phone number "469-888-3209" and finally my linkedin "www.linkedin.com/in/avi-katare". Add an email icon next to the emails, telephone icon next to the phone number and linkedin icon next to my linkedin link.
 
@@ -191,9 +164,9 @@ This document contains a log of all prompts and requests made during the develop
 - `frontend/src/App.js` - Updated contact information
 - `frontend/src/App.css` - Added contact link styling
 
-## Session 9: Skills Section Bar Chart
+## Session 8: Skills Section Bar Chart
 
-### Prompt 9
+### Prompt 8
 **Date**: Follow-up Session  
 **Request**: In the skills section at a horizontal bar chart where the x-axis is the experience in years from 0 to 2 years increment by 0.5. On the y-axis it will be skills. The skills are Azure (0.5 years), Python (2 years), R (1 year), SQL (1.5 years), Databases (1.5 years), PowerBI (1.5 years), Tableau (0.5 years), SAS (0.5 years). Order the skills by experience, at the top the skills with the highest experience and decreasing as you go down.
 
@@ -211,9 +184,9 @@ This document contains a log of all prompts and requests made during the develop
 - `frontend/src/App.js` - Added bar chart structure
 - `frontend/src/App.css` - Added bar chart styling and responsive design
 
-## Session 10: Experience Section
+## Session 9: Experience Section
 
-### Prompt 10
+### Prompt 9
 **Date**: Follow-up Session  
 **Request**: Add a Experience section, follow the same format as education section. Use data from LinkedIn Experience section. The link for linkedin is www.linkedin.com/in/avi-katare
 
@@ -232,9 +205,9 @@ This document contains a log of all prompts and requests made during the develop
 - `frontend/src/App.css` - Added Experience section styling
 - `EXPERIENCE-DATA.md` - Created guide for updating experience data
 
-## Session 11: Experience Section Background
+## Session 10: Experience Section Background
 
-### Prompt 11
+### Prompt 10
 **Date**: Follow-up Session  
 **Request**: For the background of experience section add the attached image (industrial manufacturing/robotic assembly line).
 
@@ -252,9 +225,9 @@ This document contains a log of all prompts and requests made during the develop
 - `IMAGE-SETUP.md` - Added Experience section image setup
 - `frontend/public/images/README.md` - Updated with Experience image info
 
-## Session 12: Projects Section Content
+## Session 11: Projects Section Content
 
-### Prompt 12
+### Prompt 11
 **Date**: Follow-up Session  
 **Request**: Finally for the projects section, have the format project title and year, projection description, tools used, project link (if given). Added three projects: Airport Delays (Fall 2023), Video Game Data Analysis (Fall 2021), and CVFIA (Summer 2021). Order the projects as follows - Project 3, Project 2, Project 1.
 
@@ -272,9 +245,9 @@ This document contains a log of all prompts and requests made during the develop
 - `frontend/src/App.js` - Updated Projects section with real project data
 - `frontend/src/App.css` - Updated project card styling to match Education/Experience format
 
-## Session 13: Projects Section Background
+## Session 12: Projects Section Background
 
-### Prompt 13
+### Prompt 12
 **Date**: Follow-up Session  
 **Request**: Use the attached image for the background for the projects section (data visualization/business analytics illustration).
 
