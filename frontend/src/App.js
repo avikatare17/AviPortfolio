@@ -1,11 +1,51 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 
+// Check if images exist and set background images dynamically
+const setBackgroundImages = () => {
+  // Only run in browser environment
+  if (typeof window === 'undefined' || typeof document === 'undefined') {
+    return;
+  }
+
+  const images = [
+    { className: 'hero-background', url: '/images/aircraft-background.jpg' },
+    { className: 'education-background', url: '/images/education-background.jpg' },
+    { className: 'experience-background', url: '/images/experience-background.jpg' },
+    { className: 'projects-background', url: '/images/projects-background.jpg' }
+  ];
+
+  images.forEach(({ className, url }) => {
+    try {
+      const img = new Image();
+      img.onload = () => {
+        const elements = document.getElementsByClassName(className);
+        Array.from(elements).forEach(el => {
+          if (el) {
+            el.style.backgroundImage = `url(${url})`;
+          }
+        });
+      };
+      img.onerror = () => {
+        // Image doesn't exist, keep the gradient fallback
+        // This is expected during development if images aren't present
+      };
+      img.src = url;
+    } catch (error) {
+      // Silently fail if there's an error loading images
+      console.warn(`Failed to load image: ${url}`, error);
+    }
+  });
+};
+
 function App() {
   const [activeSection, setActiveSection] = useState('home');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
+    // Set background images if they exist
+    setBackgroundImages();
+
     // Handle scroll to update active section
     const handleScroll = () => {
       const sections = ['home', 'education', 'experience', 'projects', 'skills', 'contact'];
