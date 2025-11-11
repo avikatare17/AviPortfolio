@@ -265,16 +265,126 @@ This document contains a log of all prompts and requests made during the develop
 - `IMAGE-SETUP.md` - Added Projects section image setup
 - `frontend/public/images/README.md` - Updated with Projects image info
 
+## Session 13: Build Error Fix
+
+### Prompt 13
+**Date**: Follow-up Session  
+**Request**: Fix build error: "Module not found: Error: Can't resolve '/images/aircraft-background.jpg' in '/app/frontend/src'"
+
+**Actions Taken**:
+- Removed all CSS `url()` references to background images (which caused build failures)
+- Implemented dynamic image loading via JavaScript at runtime
+- Added gradient fallbacks in CSS for all sections
+- Added error handling for missing images
+- Fixed reserved keyword issue (`class` → `className`)
+- Added browser environment checks
+- Images now load dynamically when available, with graceful fallbacks
+
+**Files Modified**:
+- `frontend/src/App.js` - Added `setBackgroundImages()` function for dynamic loading
+- `frontend/src/App.css` - Removed image URLs, added gradient fallbacks
+- Build now succeeds even if images are missing
+
+**Technical Details**:
+- Build process no longer tries to resolve image URLs at compile time
+- Images are loaded via JavaScript `Image()` objects at runtime
+- If images exist, they're applied; otherwise, gradients are used
+- This approach prevents build failures and allows for flexible image management
+
+## Session 14: Education Section Data Update
+
+### Prompt 14
+**Date**: Follow-up Session  
+**Request**: Update the Education section with three degrees: (1) Master of Business and Technology with concentration in Robotics (Aug 2025 - Dec 2026) at Daniel School of Business, Purdue University, (2) MicroMaster's in Supply Chain Management (Jan 2025 - Jun 2026) at MIT, (3) Bachelor's of Science in Data Science and Artificial Intelligence (Aug 2020 - Dec 2023) at Purdue University.
+
+**Actions Taken**:
+- Updated Education section with three real degrees
+- Added Master of Business and Technology (MBT) with full description and electives
+- Added MIT MicroMaster's in Supply Chain Management
+- Added BS in Data Science and AI with Dean's List achievements
+- Updated all degree information, dates, institutions, and locations
+- Maintained card layout format with consistent styling
+
+**Files Modified**:
+- `frontend/src/App.js` - Updated Education section with three degrees
+
+**Education Data**:
+1. Master of Business and Technology (Robotics) - Aug 2025 - Dec 2026 - Purdue University
+2. MicroMaster's in Supply Chain Management - Jan 2025 - Jun 2026 - MIT
+3. BS in Data Science and AI - Aug 2020 - Dec 2023 - Purdue University
+
+## Session 15: Experience Section Data Update
+
+### Prompt 15
+**Date**: Follow-up Session  
+**Request**: Update the Experience section with five General Motors positions: (1) Plant Floor Systems Co-op (Jan 2025 - Present), (2) Cybersecurity and Controls Co-op (Aug 2024 - Dec 2024), (3) Device Level Analytics Co-op (Jan 2024 - June 2024), (4) Device Level Analytics Intern (Jun 2023 - Aug 2023), (5) IT Intern (Jun 2022 - Aug 2022).
+
+**Actions Taken**:
+- Updated Experience section with five real GM positions
+- Added detailed descriptions for each position
+- Included all locations (West Lafayette, IN; Marion, IN; Warren, MI; Toledo, OH)
+- Added comprehensive descriptions of responsibilities and achievements
+- Maintained card layout format matching Education section
+- Ordered positions from most recent to oldest
+
+**Files Modified**:
+- `frontend/src/App.js` - Updated Experience section with five positions
+
+**Experience Data**:
+1. Plant Floor Systems Co-op - Jan 2025 - Present - West Lafayette, IN
+2. Cybersecurity and Controls Co-op - Aug 2024 - Dec 2024 - Marion, IN
+3. Device Level Analytics Co-op - Jan 2024 - June 2024 - West Lafayette, IN
+4. Device Level Analytics Intern - Jun 2023 - Aug 2023 - Warren, MI
+5. IT Intern - Jun 2022 - Aug 2022 - Toledo, OH
+
+## Session 16: Skills Section Redesign
+
+### Prompt 16
+**Date**: Follow-up Session  
+**Request**: Update the Skills section to match the provided image design. The section should use the same data as the image with blue bars, vertical separators, and a clean minimalist layout.
+
+**Actions Taken**:
+- Redesigned Skills section to match reference image
+- Updated title to "Skills and Experience (in years):"
+- Changed bars to solid blue color (#2563eb)
+- Added vertical separator lines between labels and bars
+- Updated skill data to match image: Python (2.0), Hypothesis Testing (2.0), Data Structures (2.0), Algorithms (2.0), SQL (1.5), Databases (1.5), Power BI (1.5), R (1.0), Java (1.0), Azure (0.5), Tableau (0.5), SAS (0.5), C (0.5)
+- Removed rounded corners, shadows, and gradients for minimalist design
+- Changed background to light grey (#f5f5f5)
+- Moved experience values outside bars in dark text
+- Used fixed pixel widths for consistent bar scaling
+- Added mobile responsive scaling
+- Removed x-axis labels and grid lines for cleaner look
+
+**Files Modified**:
+- `frontend/src/App.js` - Updated skills data and structure (13 skills)
+- `frontend/src/App.css` - Complete redesign of skills section styling
+
+**Skills Data** (13 skills, ordered by experience):
+- Python: 2.0 years
+- Hypothesis Testing: 2.0 years
+- Data Structures: 2.0 years
+- Algorithms: 2.0 years
+- SQL: 1.5 years
+- Databases: 1.5 years
+- Power BI: 1.5 years
+- R: 1.0 year
+- Java: 1.0 year
+- Azure: 0.5 years
+- Tableau: 0.5 years
+- SAS: 0.5 years
+- C: 0.5 years
+
 ---
 
 ## Summary
 
 ### Portfolio Sections Completed
 1. ✅ **Landing Page** - Aircraft background, personal info, navigation
-2. ✅ **Education Section** - Card layout, classroom background
-3. ✅ **Experience Section** - Card layout, industrial background
-4. ✅ **Projects Section** - Card layout, data visualization background
-5. ✅ **Skills Section** - Horizontal bar chart with experience levels
+2. ✅ **Education Section** - Card layout, classroom background, three degrees (MBT, MIT MicroMaster's, BS Data Science)
+3. ✅ **Experience Section** - Card layout, industrial background, five GM positions
+4. ✅ **Projects Section** - Card layout, data visualization background, three projects
+5. ✅ **Skills Section** - Horizontal bar chart with blue bars, 13 skills, minimalist design
 6. ✅ **Contact Section** - Personal contact information with icons
 
 ### Background Images
@@ -287,19 +397,24 @@ This document contains a log of all prompts and requests made during the develop
 - Fully responsive design (desktop, tablet, mobile)
 - Smooth scrolling navigation
 - Professional card layouts
-- Background images with overlays
-- Interactive bar chart
+- Background images with overlays (dynamically loaded)
+- Interactive bar chart with blue bars and vertical separators
 - Contact information with clickable links
 - GitHub Actions deployment ready
 - Google Cloud Run deployment configured
+- Dynamic image loading (prevents build errors)
+- Real education and experience data integrated
 
 ### Notes
 
 - All prompts were successfully implemented
 - The application is ready for deployment to Google Cloud Run
 - The portfolio is fully responsive and functional
-- Git repository is initialized and ready for GitHub connection
+- Git repository is initialized and connected to GitHub
 - All sections have consistent styling and professional appearance
-- Background images need to be added to `frontend/public/images/` directory
-- Education and Experience data can be updated from LinkedIn profile
+- Background images are dynamically loaded at runtime (prevents build failures)
+- Education section contains three real degrees with detailed descriptions
+- Experience section contains five real GM positions with comprehensive descriptions
+- Skills section matches reference image design with blue bars and 13 skills
+- Build process no longer fails due to missing images (gradient fallbacks implemented)
 
